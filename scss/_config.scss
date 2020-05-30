@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700");
+
+$dark: #2f303a;
+$light: #ffffff;
+$pink: rgb(188, 58, 128);
+$primary: rgba(188, 58, 128, 0.1);
+$blue: rgb(52, 87, 178);
+$secondary: rgba(52, 87, 178, 0.1);
+
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+.sm-none {
+  display: none;
+  @include md {
+    display: block;
+  }
+}
+.subtitle {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+.btn {
+  background-color: $blue;
+  color: $light;
+  padding: 0.5rem 1.2rem;
+  &:hover {
+    color: $light;
+    background-color: lighten($blue, 10%);
+  }
+}

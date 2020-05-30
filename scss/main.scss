@@ -1,0 +1,135 @@
+@import "./config";
+@import "./discover";
+@import "./join";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $dark;
+  font-size: 1.2rem;
+  color: $light;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  @include md {
+    overflow: hidden;
+  }
+}
+
+.full-height-grow {
+  .container {
+    padding: 1rem 2rem;
+  }
+}
+
+// navbar
+.navbar {
+  padding: 1.5rem 0;
+  &-brand {
+    color: $light;
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: 0.5rem; //breakpoint here
+      font-size: 1.5rem;
+      @include md {
+        font-size: 2rem;
+        margin-left: 1rem;
+      }
+    }
+    &:hover {
+      color: $light;
+    }
+  }
+  &-nav {
+    align-items: center;
+  }
+  .nav-link {
+    color: $light;
+    transition: 0.4s;
+    @include md {
+      font-size: 1.4rem;
+    }
+    &:hover {
+      color: lighten($dark, 40%);
+    }
+  }
+}
+
+// Landing-page
+.landing-page {
+  margin-top: 4rem;
+  .col-md-7 {
+    @include md {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+  img {
+    width: 30%;
+    height: 75%;
+    position: fixed;
+    bottom: 0;
+    display: block;
+  }
+}
+
+.homepage-ellipse-1 {
+  position: absolute;
+  height: 150px; //breakpoint here
+  width: 150px;
+  border-radius: 50%;
+  z-index: -1;
+  bottom: 10%;
+  background-color: $primary;
+  @include md {
+    height: 300px;
+    width: 300px;
+  }
+}
+.homepage-ellipse-2 {
+  position: absolute;
+  height: 120px; //breakpoint here
+  width: 120px;
+  top: 15%;
+  left: 40%;
+  background-color: $secondary;
+  border-radius: 50%;
+  z-index: -1;
+  @include md {
+    height: 240px;
+    width: 240px;
+  }
+}
+.homepage-ellipse-3 {
+  position: absolute;
+  height: 200px; //breakpoint here
+  width: 200px;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  @include md {
+    height: 400px;
+    width: 400px;
+  }
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    transform: translate(30%, 30%);
+    background-color: $secondary;
+  }
+}
+
+#ellipse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+}
