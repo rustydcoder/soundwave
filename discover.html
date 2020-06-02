@@ -16,68 +16,105 @@
   </head>
 
   <body class="full-height-grow">
-    <div class="container">
-      <!-- header section -->
-      <header>
-        <nav class="navbar navbar-expand">
-          <a href="index.html" class="navbar-brand"
-            ><img src="images/logo.png" alt="Logo" /><span>Soundwave</span></a
-          >
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a href="discover.html" class="nav-link">Discover</a>
-            </li>
-            <li class="nav-item">
-              <a href="join.html" class="nav-link">Join</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      <!-- Dicovery -->
-      <section class="discover">
-        <div class="row align-items-center">
-          <div class="col-md-8">
-            <h2 class="display-4">Discover new music</h2>
-            <div class="cards">
-              <div>
-                <img src="images/microphone.svg" alt="charts" />
-                <p class="lead">Charts</p>
-              </div>
-              <div>
-                <img src="images/albums.svg" alt="albums" />
-                <p class="lead">Albums</p>
-              </div>
-              <div>
-                <img src="images/more.svg" alt="more" />
-                <p class="lead">More</p>
-              </div>
-            </div>
-            <p>
-              By joining you can benefit by listening to the latest albums
-              released.
-            </p>
-          </div>
-          <div class="col-md-4">
-            <div class="discover-cover">
-              <img src="images/covers.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <footer>
+    <div class="layer">
       <div class="container">
-        <div>
-          <a href="#">About Us</a>
-          <a href="#">Contact</a>
+        <!-- header section -->
+        <header>
+          <nav class="navbar navbar-expand">
+            <a href="index.html" class="navbar-brand"
+              ><img src="images/logo.png" alt="Logo" /><span>Soundwave</span></a
+            >
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="discover.html" class="nav-link">Discover</a>
+              </li>
+              <li class="nav-item">
+                <a href="join.html" class="nav-link">Join</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Dicovery -->
+        <section class="discover">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h2 class="display-4">Discover new music</h2>
+              <div class="cards">
+                <div id="chart">
+                  <img src="images/microphone.svg" alt="charts" />
+                  <p class="lead">Charts</p>
+                </div>
+                <div>
+                  <img src="images/albums.svg" alt="albums" />
+                  <p class="lead">Albums</p>
+                </div>
+                <div>
+                  <img src="images/more.svg" alt="more" />
+                  <p class="lead">More</p>
+                </div>
+              </div>
+              <p>
+                By joining you can benefit by listening to the latest albums
+                released.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <div class="discover-cover">
+                <img src="images/covers.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <div class="container">
+          <div>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+          </div>
+          <div>
+            <a href="#"><img src="images/twitter.svg" alt="" /> Twitter</a>
+            <a href="#"><img src="images/facebook.svg" alt="" /> Facebook</a>
+          </div>
         </div>
-        <div>
-          <a href="#"><img src="images/twitter.svg" alt="" /> Twitter</a>
-          <a href="#"><img src="images/facebook.svg" alt="" /> Facebook</a>
+      </footer>
+    </div>
+
+    <div class="layer" id="chart-layer">
+      <!-- insert from js -->
+      <div class="layer-header">
+        <button id="back">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <h1 class="display-4">Top Acoustic Hits</h1>
+        <h6>A mix of folksy hits, soulful acoustic trending tracks</h6>
+      </div>
+      <div class="layer-content">
+        <div class="container">
+          <div class="list align-items-center row">
+            <div class="list-number col-md-1 col-sm-1">1</div>
+            <div class="list-img col-md-3 col-sm-3">
+              <img src="images/header-bg.jpg" alt="" />
+            </div>
+            <div class="list-song col-md-6 col-sm-6">
+              <span class="list-song_title">All I Want</span>
+              <span class="list-song_artist">Kodaline</span>
+            </div>
+            <div class="list-icon col-md-2 col-sm-2">
+              <button class="btn-control">
+                <i class="fa fa-play"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
+      <!-- end inserted from js -->
+    </div>
+
+    <div class="spinner">
+      <img src="images/loading.gif" alt="" />
+    </div>
 
     <!-- Scripts -->
     <script
@@ -88,6 +125,10 @@
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/c2e1f676eb.js"
       crossorigin="anonymous"
     ></script>
     <script src="dist/js/spotifyApi.js"></script>

@@ -1,8 +1,10 @@
 @import "./config";
+@import "./index";
 @import "./discover";
 @import "./join";
 
-* {
+html,
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,18 +12,42 @@
 
 body {
   background-color: $dark;
-  font-size: 1.2rem;
   color: $light;
-  overflow-x: hidden;
   font-family: "Poppins", sans-serif;
-  @include md {
-    overflow: hidden;
-  }
+  font-size: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  // @include md {
+  // overflow-x: hidden;
+  // }
 }
 
 .full-height-grow {
-  .container {
+  & > .container {
     padding: 1rem 2rem;
+  }
+}
+
+.sm-none {
+  display: none;
+  @include md {
+    display: block;
+  }
+}
+.subtitle {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+.btn {
+  background-color: $blue;
+  color: $light;
+  padding: 0.5rem 1.2rem;
+  &:hover {
+    color: $light;
+    background-color: lighten($blue, 10%);
   }
 }
 
@@ -59,77 +85,29 @@ body {
   }
 }
 
-// Landing-page
-.landing-page {
-  margin-top: 4rem;
-  .col-md-7 {
-    @include md {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+// footer
+footer {
+  background-color: #202027;
+  width: 100%;
+  padding: 16px;
+  @include md {
+    position: absolute;
+    bottom: 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    a {
+      color: $light;
+      text-decoration: none;
+      padding-left: 1rem;
+      @include md {
+        font-weight: 700;
+      }
+      &:hover {
+        color: lighten($dark, 40%);
+      }
     }
   }
-  img {
-    width: 30%;
-    height: 75%;
-    position: fixed;
-    bottom: 0;
-    display: block;
-  }
-}
-
-.homepage-ellipse-1 {
-  position: absolute;
-  height: 150px; //breakpoint here
-  width: 150px;
-  border-radius: 50%;
-  z-index: -1;
-  bottom: 10%;
-  background-color: $primary;
-  @include md {
-    height: 300px;
-    width: 300px;
-  }
-}
-.homepage-ellipse-2 {
-  position: absolute;
-  height: 120px; //breakpoint here
-  width: 120px;
-  top: 15%;
-  left: 40%;
-  background-color: $secondary;
-  border-radius: 50%;
-  z-index: -1;
-  @include md {
-    height: 240px;
-    width: 240px;
-  }
-}
-.homepage-ellipse-3 {
-  position: absolute;
-  height: 200px; //breakpoint here
-  width: 200px;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  @include md {
-    height: 400px;
-    width: 400px;
-  }
-  &::before {
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    transform: translate(30%, 30%);
-    background-color: $secondary;
-  }
-}
-
-#ellipse {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -5;
 }
