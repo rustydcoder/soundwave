@@ -98,11 +98,10 @@
       color: #cecece;
     }
   }
-  &-content {
+  .layer-wrap {
+    height: 100%;
+    overflow-y: auto;
     margin-top: 40px;
-    & > div.container {
-      height: auto;
-    }
   }
 }
 .list:first-child {
@@ -112,23 +111,23 @@
   border-width: 1px 0px;
   border-style: solid;
   border-color: #fff;
-  padding: 16px 0;
+  padding: 8px 0;
   &-number {
     font-size: 18px;
     text-align: center;
   }
-  &-img > img {
-    width: 100%;
-  }
-  &-song > span {
-    display: block;
-    &.list-song_title {
-      font-size: 18px;
-      font-weight: 700;
-    }
-    &.list-song_artist {
-      font-size: 16px;
-      font-weight: 400;
+  &-song {
+    text-align: left;
+    & > span {
+      display: block;
+      &.list-song_title {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      &.list-song_artist {
+        font-size: 16px;
+        font-weight: 400;
+      }
     }
   }
   &-icon {
